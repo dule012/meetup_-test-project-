@@ -49,19 +49,17 @@ class MeetUpCities extends Component {
             <React.Fragment>
                 <Header searchEvents={this.state.searchEvents} inputValue={this.state.inputValue} />
 
-                <div>
-                    {this.state.inputValue !== '' ? this.state.filteredArrOfEvents.map((el, i) => {
-                        return (<div key={i}>
-                            <img src={el.photo} alt="EventImage" />
-                            <p>{el.name}</p>
-                        </div>)
-                    }) : this.state.arrOfEvents.map((el, i) => {
-                        return (<div key={i}>
-                            <img src={el.photo} alt="EventImage" />
-                            <p>{el.name}</p>
-                        </div>)
-                    })}
-                </div>
+                {this.state.inputValue !== '' ? this.state.filteredArrOfEvents.map((el, i) => {
+                    return (<div className='events' key={i}>
+                        <img src={el.photo} alt="EventImage" />
+                        <p>{el.name}</p>
+                    </div>)
+                }) : this.state.arrOfEvents.map((el, i) => {
+                    return (<div className='events' key={i}>
+                        <img src={el.photo} alt="EventImage" />
+                        <p>{el.name}</p>
+                    </div>)
+                })}
 
                 <Footer />
             </React.Fragment>

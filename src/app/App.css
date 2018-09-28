@@ -1,0 +1,104 @@
+ * {
+     margin: 0;
+     padding: 0;
+     box-sizing: border-box;
+ }
+
+ header {
+     padding: 30px 0;
+     text-align: center;
+     font-size: 23px;
+     color: white;
+     background-color: rgb(204, 69, 69);
+     position: relative;
+ }
+
+ header input {
+     position: absolute;
+     top: 50%;
+     right: 10px;
+     transform: translate(0, -50%);
+     width: 33%;
+     max-width: 190px;
+     border: none;
+     padding: 5px;
+     border-radius: 7px;
+ }
+
+ footer {
+     position: fixed;
+     bottom: 0;
+     left: 0;
+     right: 0;
+     padding: 12px 0;
+     background-color: rgb(204, 69, 69);
+     color: white;
+     font-size: 18px;
+     text-align: center;
+ }
+
+ h3 {
+     text-align: center;
+     margin: 60px 0px;
+ }
+
+ .belgrade, .noviSad {
+     width: 80%;
+     margin: auto;
+     padding: 10px 0;
+     margin-bottom: 40px;
+     text-align: center;
+     text-decoration: none;
+     border-bottom: 1px solid lightblue;
+     transition: 0.3s linear;
+     cursor: pointer;
+ }
+
+ .belgrade:hover, .noviSad:hover {
+     background-color: lightblue;
+     color: white;
+ }
+
+ .events {
+     width: 80%;
+     margin: 30px auto;
+     padding: 10px 0;
+     text-align: center;
+     border-bottom: 1px solid lightblue;
+     transition: all 0.3s linear;
+     height: 215px;
+     cursor: pointer;
+ }
+
+ .events:hover {
+     background-color: lightblue;
+     color: white;
+ }
+
+ .events img {
+     width: 70%;
+     height: 150px;
+     object-fit: cover;
+ }
+
+ .events p {
+     margin-top: 10px;
+     font-size: 15px;
+ }
+
+ @media screen and (min-width: 700px) {
+     .events {
+         float:left;
+         width: 40%;
+         margin-left: 4.5%;
+     }
+ }
+ @media screen and (min-width: 950px){
+     .events {
+         width: 27%;
+         margin-left: 5%
+     }
+     header {
+         font-size: 29px;
+     }
+ }
