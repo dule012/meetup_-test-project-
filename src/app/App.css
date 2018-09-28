@@ -86,14 +86,47 @@
      font-size: 15px;
  }
 
+ .nameInfo {
+     margin-top: 30px;
+     text-align: center;
+     font-weight: bold;
+     animation: fadeIn 0.3s lieaner 1s;
+ }
+
+ .imgInfo {
+     display: block;
+     margin: 20px auto;
+     width: 200px;
+     height: 150px;
+     object-fit: cover;
+     animation: fadeIn 0.3s linear 1s;
+ }
+
+ .descriptionInfo {
+     width: 90%;
+     margin: 50px auto;
+     text-align: center;
+     animation: fadeIn 0.7s linear 1s;
+ }
+
+ @keyframes fadeIn {
+     0% {
+         opacity: 0;
+     }
+     100% {
+         opacity: 1;
+     }
+ }
+
  @media screen and (min-width: 700px) {
      .events {
-         float:left;
+         float: left;
          width: 40%;
          margin-left: 4.5%;
      }
  }
- @media screen and (min-width: 950px){
+
+ @media screen and (min-width: 950px) {
      .events {
          width: 27%;
          margin-left: 5%

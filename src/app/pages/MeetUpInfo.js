@@ -1,4 +1,6 @@
 import React, { Component } from 'react'
+import Header from './partials/Header'
+import Footer from './partials/Footer'
 
 class MeetUpInfo extends Component {
     constructor(props) {
@@ -6,14 +8,16 @@ class MeetUpInfo extends Component {
     }
 
     componentDidMount() {
-        document.querySelector('.description').innerHTML = localStorage.getItem('description')
+        document.querySelector('.descriptionInfo').innerHTML = localStorage.getItem('description')
     }
     render() {
         return (
             <React.Fragment>
+                <Header />
                 <p className="nameInfo">{localStorage.getItem('name')}</p>
                 <img className="imgInfo" src={localStorage.getItem('photo')} alt="EventImage" />
                 <p className="descriptionInfo"></p>
+                <Footer />
             </React.Fragment>
         )
     }
