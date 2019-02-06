@@ -8,36 +8,36 @@ class MeetUpCities extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            arrOfEventsBelgrade: [],
-            arrOfEventsNoviSad: [],
+            arrOfEvents: [],
             inputValue: '',
             searchEvents: this.searchEvents.bind(this)
         }
     }
 
     componentDidMount() {
-        if (this.props.match.params.meetupCity === 'belgrade' && this.state.arrOfEventsBelgrade.length === 0) {
+        if (this.props.match.params.meetupCity === 'belgrade') {
             fetchBelgradeEvents().then((data) => {
                 console.log(data)
                 this.setState({
-                    arrOfEventsBelgrade: data
+                    arrOfEvents: data
                 })
             })
-        } else if (this.state.arrOfEventsNoviSad.length === 0) {
+        } else {
             fetchNoviSadEvents().then((data) => {
                 this.setState({
-                    arrOfEventsNoviSad: data
+                    arrOfEvents: data
                 })
                 console.log(data)
             })
         }
+
+
+
     }
 
     searchEvents = (e) => {
 
-        const filteredArrOfEvents = this.props.match.params.meetupCity === 'belgrade' ? this.state.arrOfEventsBelgrade.filter((el) => {
-            return el.name.toLowerCase().indexOf(e.target.value.toLowerCase()) !== -1
-        }) : this.state.arrOfEventsNoviSad.filter((el) => {
+        const filteredArrOfEvents = this.state.arrOfEvents.filter((el) => {
             return el.name.toLowerCase().indexOf(e.target.value.toLowerCase()) !== -1
         })
 
@@ -72,13 +72,7 @@ class MeetUpCities extends Component {
                             <p>{el.name}</p>
                         </div>
                     </Link>)
-                }) : this.props.match.params.meetupCity === 'belgrade' ? this.state.arrOfEventsBelgrade.map((el, i) => {
-                    return (<Link to={`/${this.props.match.params.meetupCity}/${i}`} onClick={this.setLocalStorageOnClick.bind(this, i)} key={i} style={{ textDecoration: 'none', color: 'black' }}>
-                        <div className='events' >
-                            <img src={el.photo} alt="EventImage" />
-                            <p>{el.name}</p>
-                        </div></Link>)
-                }) : this.state.arrOfEventsNoviSad.map((el, i) => {
+                }) : this.state.arrOfEvents.map((el, i) => {
                     return (<Link to={`/${this.props.match.params.meetupCity}/${i}`} onClick={this.setLocalStorageOnClick.bind(this, i)} key={i} style={{ textDecoration: 'none', color: 'black' }}>
                         <div className='events' >
                             <img src={el.photo} alt="EventImage" />
