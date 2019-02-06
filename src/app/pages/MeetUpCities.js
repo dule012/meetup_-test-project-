@@ -63,7 +63,7 @@ class MeetUpCities extends Component {
     render() {
         return (
             <React.Fragment>
-                <Header searchEvents={this.state.searchEvents} inputValue={this.state.inputValue} />
+                <Header searchEvents={this.state.searchEvents} inputValue={this.state.inputValue} pathname={this.props.location.pathname} />
 
                 {this.state.inputValue !== '' ? this.state.filteredArrOfEvents.map((el, i) => {
                     return (<Link to={`/:${this.props.match.params.meetupCity}/:${i}`} onClick={this.setLocalStorageOnClick.bind(this, i)} key={i} style={{ textDecoration: 'none', color: 'black' }}>

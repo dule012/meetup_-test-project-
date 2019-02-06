@@ -10,7 +10,7 @@ class MeetUpInfo extends Component {
     render() {
         return (
             <React.Fragment>
-                <Header />
+                <Header pathname={this.props.location.pathname} />
                 <p className="nameInfo">{localStorage.getItem('name')}</p>
                 <img className="imgInfo" src={localStorage.getItem('photo')} alt="EventImage" />
                 <p className="descriptionInfo"></p>
