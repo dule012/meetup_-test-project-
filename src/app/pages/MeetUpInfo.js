@@ -3,9 +3,6 @@ import Header from './partials/Header'
 import Footer from './partials/Footer'
 
 class MeetUpInfo extends Component {
-    constructor(props) {
-        super(props)
-    }
 
     componentDidMount() {
         document.querySelector('.descriptionInfo').innerHTML = localStorage.getItem('description')

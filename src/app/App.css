@@ -18,11 +18,22 @@
      top: 50%;
      right: 10px;
      transform: translate(0, -50%);
-     width: 33%;
+     width: 27%;
      max-width: 190px;
      border: none;
      padding: 5px;
      border-radius: 7px;
+     font-size: 13px;
+ }
+
+ .back-arrow {
+     font-size: 24px;
+     color: white;
+     position: absolute;
+     top: 50%;
+     left: 4%;
+     transform: translate(0, -50%);
+     cursor: pointer;
  }
 
  footer {
@@ -55,7 +66,7 @@
  }
 
  .belgrade:hover, .noviSad:hover {
-     background-color: lightblue;
+     background-color: #ff7272;
      color: white;
  }
 
@@ -71,7 +82,7 @@
  }
 
  .events:hover {
-     background-color: lightblue;
+     background-color: #ff7272;
      color: white;
  }
 
@@ -90,7 +101,7 @@
      margin-top: 30px;
      text-align: center;
      font-weight: bold;
-     animation: fadeIn 0.3s lieaner 1s;
+     animation: fadeIn 0.7s lieaner;
  }
 
  .imgInfo {
@@ -99,14 +110,14 @@
      width: 200px;
      height: 150px;
      object-fit: cover;
-     animation: fadeIn 0.3s linear 1s;
+     animation: fadeIn 0.7s linear;
  }
 
  .descriptionInfo {
      width: 90%;
      margin: 50px auto;
      text-align: center;
-     animation: fadeIn 0.7s linear 1s;
+     animation: fadeIn 0.7s linear;
  }
 
  @keyframes fadeIn {
@@ -115,6 +126,13 @@
      }
      100% {
          opacity: 1;
+     }
+ }
+
+ @media screen and (min-width: 425px) {
+     header input {
+         width: 33%;
+         font-size: 18px;
      }
  }
 
